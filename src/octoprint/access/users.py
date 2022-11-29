@@ -1,5 +1,5 @@
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The YallyPrint Project - Released under terms of the AGPLv3 License"
 
 import hashlib
 import logging
@@ -365,7 +365,7 @@ class UserManager(GroupChangeListener):
 
     # ~~ Deprecated methods follow
 
-    # TODO: Remove deprecated methods in OctoPrint 1.5.0
+    # TODO: Remove deprecated methods in YallyPrint 1.0.0
 
     @deprecated(
         "changeUserRoles has been replaced by change_user_permissions",
@@ -527,7 +527,7 @@ class FilebasedUserManager(UserManager):
             if not data or not isinstance(data, dict):
                 self._logger.fatal(
                     "{} does not contain a valid map of users. Fix "
-                    "the file, or remove it, then restart OctoPrint.".format(
+                    "the file, or remove it, then restart YallyPrint.".format(
                         self._userfile
                     )
                 )
@@ -977,7 +977,7 @@ class FilebasedUserManager(UserManager):
 
     # ~~ Deprecated methods follow
 
-    # TODO: Remove deprecated methods in OctoPrint 1.5.0
+    # TODO: Remove deprecated methods in YallyPrint 1.0.0
 
     generateApiKey = deprecated(
         "generateApiKey has been renamed to generate_api_key",
@@ -1113,23 +1113,23 @@ class MethodReplacedByBooleanProperty:
         return str(self._attr)
 
 
-# TODO: Remove compatibility layer in OctoPrint 1.5.0
+# TODO: Remove compatibility layer in YallyPrint 1.0.0
 class FlaskLoginMethodReplacedByBooleanProperty(MethodReplacedByBooleanProperty):
     def __init__(self, name, getter):
         message = (
-            "{name} is now a property in Flask-Login versions >= 0.3.0, which OctoPrint now uses. "
-            + "Use {name} instead of {name}(). This compatibility layer will be removed in OctoPrint 1.5.0."
+            "{name} is now a property in Flask-Login versions >= 0.3.0, which YallyPrint now uses. "
+            + "Use {name} instead of {name}(). This compatibility layer will be removed in YallyPrint 1.0.0."
         )
         MethodReplacedByBooleanProperty.__init__(self, name, message, getter)
 
 
-# TODO: Remove compatibility layer in OctoPrint 1.5.0
+# TODO: Remove compatibility layer in YallyPrint 1.0.0
 class OctoPrintUserMethodReplacedByBooleanProperty(MethodReplacedByBooleanProperty):
     def __init__(self, name, getter):
         message = (
             "{name} is now a property for consistency reasons with Flask-Login versions >= 0.3.0, which "
-            + "OctoPrint now uses. Use {name} instead of {name}(). This compatibility layer will be removed "
-            + "in OctoPrint 1.5.0."
+            + "YallyPrint now uses. Use {name} instead of {name}(). This compatibility layer will be removed "
+            + "in YallyPrint 1.0.0."
         )
         MethodReplacedByBooleanProperty.__init__(self, name, message, getter)
 

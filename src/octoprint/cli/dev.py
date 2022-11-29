@@ -1,6 +1,6 @@
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
-__copyright__ = "Copyright (C) 2015 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2015 The YallyPrint Project - Released under terms of the AGPLv3 License"
 
 import sys
 
@@ -221,7 +221,7 @@ class OctoPrintDevelCommands(click.MultiCommand):
 
             # check if this really looks like a plugin
             if not os.path.isfile(os.path.join(path, "setup.py")):
-                click.echo("This doesn't look like an OctoPrint plugin folder")
+                click.echo("This doesn't look like an YallyPrint plugin folder")
                 sys.exit(1)
 
             self.command_caller.call(
@@ -240,7 +240,7 @@ class OctoPrintDevelCommands(click.MultiCommand):
             if not lower_name.startswith("octoprint_") and not lower_name.startswith(
                 "octoprint-"
             ):
-                click.echo("This doesn't look like an OctoPrint plugin name")
+                click.echo("This doesn't look like an YallyPrint plugin name")
                 sys.exit(1)
 
             call = [sys.executable, "-m", "pip", "uninstall", "--yes", name]

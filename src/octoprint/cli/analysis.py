@@ -1,5 +1,5 @@
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
-__copyright__ = "Copyright (C) 2017 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2017 The YallyPrint Project - Released under terms of the AGPLv3 License"
 
 import sys
 
@@ -140,7 +140,7 @@ def gcode_command(
 
     if not validate_result(result):
         click.echo(
-            "ERROR:Invalid analysis result, please create a bug report in OctoPrint's "
+            "ERROR:Invalid analysis result, please create a bug report in YallyPrint's "
             "issue tracker and be sure to also include the GCODE file with which this "
             "happened"
         )

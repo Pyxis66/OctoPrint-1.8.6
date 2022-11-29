@@ -1,5 +1,5 @@
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
-__copyright__ = "Copyright (C) 2015 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2015 The YallyPrint Project - Released under terms of the AGPLv3 License"
 
 
 import sys
@@ -178,7 +178,7 @@ def bulk_options(options):
 
 def standard_options(hidden=False):
     """
-    Decorator to add the standard options shared among all "octoprint" commands.
+    Decorator to add the standard options shared among all "yallyprint" commands.
 
     If ``hidden`` is set to ``True``, the options will be available on the command but not
     listed in its help page.
@@ -281,7 +281,7 @@ legacy_options = bulk_options(
         ),
     ]
 )
-"""Legacy options available directly on the "octoprint" command in earlier versions.
+"""Legacy options available directly on the "yallyprint" command in earlier versions.
    Kept available for reasons of backwards compatibility, but hidden from the
    generated help pages."""
 
@@ -375,9 +375,9 @@ def octo(ctx, **kwargs):
 
         if daemon:
             click.echo(
-                'Daemon operation via "octoprint --daemon '
+                'Daemon operation via "yallyprint --daemon '
                 'start|stop|restart" is deprecated, please use '
-                '"octoprint daemon start|stop|restart" from now on'
+                '"yallyprint daemon start|stop|restart" from now on'
             )
 
             if sys.platform == "win32" or sys.platform == "darwin":
@@ -390,8 +390,8 @@ def octo(ctx, **kwargs):
                 ctx.invoke(daemon_command, command=daemon, **kwargs)
         else:
             click.echo(
-                'Starting the server via "octoprint" is deprecated, '
-                'please use "octoprint serve" from now on.'
+                'Starting the server via "yallyprint" is deprecated, '
+                'please use "yallyprint serve" from now on.'
             )
 
             from octoprint.cli.server import serve_command

@@ -1,6 +1,6 @@
 __author__ = "Marc Hannappel <salandora@gmail.com>"
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
-__copyright__ = "Copyright (C) 2017 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2017 The YallyPrint Project - Released under terms of the AGPLv3 License"
 
 from collections import OrderedDict, defaultdict
 from functools import wraps
@@ -93,7 +93,7 @@ class OctoPrintPermission(Permission):
         return True
 
     def union(self, other):
-        """Create a new OctoPrintPermission with the requirements of the union of this
+        """Create a new YallyPrintPermission with the requirements of the union of this
         and other.
 
         :param other: The other permission
